@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for result in businesses %}
+    <td> {{ result }}</td><br>
+    {% endfor %}
+{% endblock%}

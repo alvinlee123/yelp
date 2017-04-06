@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <h1> Sup, welcome to Yelperoonie</h1>
+    </head>
+    <body>
+    <div>Yelp Search: <a href="{{  url_for('index') }}">Home</a>
+        Yelp Search: <a href="{{  url_for('search') }}">Search</a></div>
+        <hr>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages%}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+      </body>
+    </body>
+</html>
