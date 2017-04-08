@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+* {
+  padding: 0;
+  margin: 0;
+}
+.fit {
+  max-width: 100%;
+  max-height: 100%;
+}
+.center {
+  display: block;
+  margin: auto;
+}
+</style>
     <head>
         <meta charset="UTF-8">
         <h1> Sup, welcome to Yelperoonie</h1>
     </head>
     <body>
-    <div>Yelp Search: <a href="{{  url_for('index') }}">Home</a>
-        Yelp Search: <a href="{{  url_for('search') }}">Search</a></div>
+    <div> <a href="{{  url_for('index') }}">Home</a>
+         <a href="{{  url_for('search') }}">Search</a>
+        <a href="{{  url_for('pictures') }}">Pictures</a>  </div>
         <hr>
         {% with messages = get_flashed_messages() %}
             {% if messages %}

@@ -1,17 +1,9 @@
 __author__ = 'alee'
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config.from_object('config')
-
+db= SQLAlchemy(app)
 
 from app import views
-
-import urllib.request as getstuff
-import json
-f = getstuff.urlopen('http://freegeoip.net/json/')
-json_string = f.read()
-f.close()
-location = json.loads(json_string)
-latitude = location['latitude']
-longitude = location['longitude']

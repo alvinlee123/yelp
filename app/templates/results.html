@@ -1,7 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {% for result in businesses %}
-    <td> {{ result }}</td><br>
+    {% for key,value in businesses.items() %}
+    <p>Name:{{ value[0] }}<br>
+       Phone Number:{{ value[2] }}<br>
+       Review Count {{ value[3] }}<br>
+       Rating {{ value[4] }}<br>
+        snippet_text {{ value[5] }}<br>
+    <img class = "center fit" src="{{ value[1]}}" />
+    </p>
     {% endfor %}
 {% endblock%}
